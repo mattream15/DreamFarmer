@@ -1,1 +1,6 @@
 <h1>Welcome to your Cannabis Plants Index!</h1>
+
+<% @cannabis_plants.each do |c| %>
+    <h2><%= c.cannabis_species %> - <%= c.variety_name %></h2>
+    <h4><%= c.number_of_seeds %></h4>
+<% end %>

@@ -11,6 +11,7 @@ class CannabisPlantsController < ApplicationController
 
     def create
         @cannabis_plant = CannabisPlant.new(cannabis_plant_params)
+        @cannabis_plant.user = current_user
         if @cannabis_plant.save
             redirect_to cannabis_plants_path
         else

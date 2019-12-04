@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
     t.string "variety_name"
     t.integer "number_of_seeds"
     t.boolean "ready_to_harvest", default: false
+    t.integer "user_id"
     t.integer "grow_room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
