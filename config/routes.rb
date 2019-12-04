@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :markets
+  resources :harvests
+  resources :grow_rooms
   resources :cannabis_plants
   resources :dreamfarmers
   devise_for :users, :controllers => {registrations: 'registrations'}

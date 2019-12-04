@@ -10,11 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_034746) do
+ActiveRecord::Schema.define(version: 2019_12_04_180724) do
 
   create_table "cannabis_plants", force: :cascade do |t|
     t.string "ready_to_harvest"
     t.boolean "completed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "grow_rooms", force: :cascade do |t|
+    t.string "growing_style"
+    t.string "type_of_soil"
+    t.string "type_of_medium"
+    t.string "nutrients"
+    t.integer "ph_of_water"
+    t.string "type_of_light"
+    t.integer "room_temperature"
+    t.integer "relative_humidity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "harvests", force: :cascade do |t|
+    t.integer "weight_of_flowers"
+    t.integer "weight_of_leaves"
+    t.integer "weight_of_roots"
+    t.integer "weight_of_seeds"
+    t.integer "weight_of_stalks"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "markets", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
