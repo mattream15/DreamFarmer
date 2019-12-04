@@ -1,0 +1,2 @@
+module CannabisPlantsHelper
+end

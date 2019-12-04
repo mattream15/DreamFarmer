@@ -1,0 +1,2 @@
+class CannabisPlantsController < ApplicationController
+end
