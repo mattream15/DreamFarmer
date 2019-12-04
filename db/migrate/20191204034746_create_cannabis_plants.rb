@@ -4,8 +4,7 @@ class CreateCannabisPlants < ActiveRecord::Migration[6.0]
       t.string :cannabis_species
       t.string :variety_name
       t.integer :number_of_seeds
-      t.string :ready_to_harvest
-      t.boolean :completed
+      t.boolean :ready_to_harvest, :default => false
 
       t.timestamps
     end

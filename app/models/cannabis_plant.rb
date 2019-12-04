@@ -6,7 +6,7 @@ class CannabisPlant < ApplicationRecord
     has_many :markets, through: :harvest
 
 
-    def self.completed_cannabis_plants
-        where(completed:true)
+    def self.harvested_cannabis_plants
+        where(ready_to_harvest:true)
     end
 end

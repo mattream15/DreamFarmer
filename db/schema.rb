@@ -13,8 +13,10 @@
 ActiveRecord::Schema.define(version: 2019_12_04_180724) do
 
   create_table "cannabis_plants", force: :cascade do |t|
-    t.string "ready_to_harvest"
-    t.boolean "completed"
+    t.string "cannabis_species"
+    t.string "variety_name"
+    t.integer "number_of_seeds"
+    t.boolean "ready_to_harvest", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
