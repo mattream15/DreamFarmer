@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
     t.string "variety_name"
     t.integer "number_of_seeds"
     t.boolean "ready_to_harvest", default: false
+    t.integer "grow_room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "grow_rooms", force: :cascade do |t|
+    t.string "name"
     t.string "growing_style"
     t.string "type_of_soil"
     t.string "type_of_medium"

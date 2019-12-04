@@ -1,4 +1,4 @@
-<%= render partial: 'errors', locals:{object: @cannabis_plant}%>
+<%= render partial: 'layouts/errors', locals:{object: @cannabis_plant}%>
 <%= form_for(@cannabis_plant) do |f| %>
 <div>
     <%= f.label :cannabis_species%>
@@ -6,6 +6,34 @@
 </div>
 
 <div>
-    <%= f.label :cannabis_species%>
-    <%= f.text_field :cannabis_species%>
+    <%= f.label :variety_name%>
+    <%= f.text_field :variety_name%>
 </div>
+
+<div>
+    <%= f.label :number_of_seeds%>
+    <%= f.text_field :number_of_seeds%>
+</div>
+
+<div>
+    <%= f.label :ready_to_harvest%>
+    <%= f.check_box :ready_to_harvest%>
+</div>
+
+<p>Please select a grow room that already exists, or create your own:</p>
+<div>
+    <%= f.collection_select :grow_room_id, GrowRoom.all, :id, :name, :growing_style, include_blank: "Select a Grow Room"%>
+</div>
+
+<p>Create a new grow room!</p>
+<%= f.fields_for :grow_room do |g| %>
+    <%= g.label :name %>
+    <%= g.text_field :name %>
+    
+    <%= g.label :growing_style %>
+    <%= g.text_field :growing_style %>
+<% end %>
+
+<%= f.submit %>
+
+<% end %>
