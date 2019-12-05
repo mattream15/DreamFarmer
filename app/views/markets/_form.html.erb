@@ -12,8 +12,8 @@
 
 <% else %>
     <div>
-        <%= f.label :cannabis_plant_id, "Select a Cannabis Plant" %>
-        <%= f.collection_select :cannabis_plant_id, CannabisPlant.all, :id, :variety_name, include_blank: true %>
+        <%= f.label :harvest_id, "Select a Harvest" %>
+        <%= f.collection_select :harvest_id, Harvest.all, :id, :weight_of_flowers, include_blank: true %>
     </div>
     <% end %>
 <div>

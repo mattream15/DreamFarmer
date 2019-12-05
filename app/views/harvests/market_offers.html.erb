@@ -1,0 +1,11 @@
+<h1>welcome to your market offers page</h1>
+
+<% @harvests.each do |h| %>
+    <h2><%= h.cannabis_plant.cannabis_species %> - <%= h.cannabis_plant.variety_name %> </h2>
+    <% h.markets.each do |m| %>
+        <h4><%= m.part_of_plant %></h4>
+        <h4><%= m.amount_for_sale %></h4>
+        <h4><%= m.asking_price %></h4>
+    <% end %>
+    <%= link_to "Create a market offer from this harvest", new_harvest_market_path(h)%>
+<% end %>

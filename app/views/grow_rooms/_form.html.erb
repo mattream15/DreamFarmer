@@ -1,4 +1,10 @@
 <%= render partial: 'layouts/errors', locals:{object: @grow_room}%>
+
+<p>Please select a grow room that already exists, or create your own:</p>
+<div>
+    <%= f.collection_select :grow_room_id, GrowRoom.all, :id, :name, :prompt => "Select a Grow Room" %>
+</div>
+
 <%= form_for(@grow_room) do |g| %>
 <div>
     <%= g.label :name %>

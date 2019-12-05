@@ -7,5 +7,6 @@ class HarvestsController < ApplicationController
     end
 
     def show
+        @harvest = Harvest.find_by(params[:id])
     end
 end

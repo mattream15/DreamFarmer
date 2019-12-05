@@ -1,1 +1,15 @@
-<h1>Here is what is for sale!</h1>
+<% if @harvest %>
+<h1>View the market offers for <%= @harvest.cannabis_plant.cannabis_species %>!</h1>
+<% else %>
+    <h1> View all of the market offers! </h1>
+<% end %>
+
+<% @markets.each do |m| %>
+    <h2><%= m.cannabis_plant.cannabis_species %></h2>
+    <h2><%= m.cannabis_plant.variety_name %></h2>
+    <h2><%= m.part_of_plant %></h2>
+    <h2><%= m.amount_for_sale %></h2>
+    <h2><%= m.asking_price %></h2>
+    <% end %>
+
+
