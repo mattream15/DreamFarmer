@@ -1,0 +1,5 @@
+<h1>Welcome to your Grow Rooms Index!</h1>
+
+<% @grow_rooms.each do |g| %>
+    <h2><%= g.name %> - <%= g.growing_style %></h2>
+<% end %>

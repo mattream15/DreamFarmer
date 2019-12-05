@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
     t.string "type_of_soil"
     t.string "type_of_medium"
     t.string "nutrients"
-    t.integer "ph_of_water"
+    t.integer "ph"
     t.string "type_of_light"
     t.integer "room_temperature"
     t.integer "relative_humidity"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
   end
 
   create_table "markets", force: :cascade do |t|
+    t.string "part_of_plant"
+    t.integer "amount_for_sale"
+    t.integer "asking_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

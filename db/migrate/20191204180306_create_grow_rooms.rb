@@ -6,7 +6,7 @@ class CreateGrowRooms < ActiveRecord::Migration[6.0]
       t.string :type_of_soil
       t.string :type_of_medium
       t.string :nutrients
-      t.integer :ph_of_water
+      t.integer :ph
       t.string :type_of_light
       t.integer :room_temperature
       t.integer :relative_humidity
