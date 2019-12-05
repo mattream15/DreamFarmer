@@ -20,6 +20,12 @@ class CannabisPlantsController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def show
+    end
+
     private
 
     def cannabis_plant_params

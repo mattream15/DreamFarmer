@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
     t.string "variety_name"
     t.integer "number_of_seeds"
     t.boolean "ready_to_harvest", default: false
+    t.boolean "harvested", default: false
     t.integer "user_id"
     t.integer "grow_room_id"
     t.datetime "created_at", precision: 6, null: false
@@ -43,6 +44,9 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
     t.integer "weight_of_roots"
     t.integer "weight_of_seeds"
     t.integer "weight_of_stalks"
+    t.integer "user_id"
+    t.integer "cannabis_plant_id"
+    t.integer "grow_room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,6 +55,8 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
     t.string "part_of_plant"
     t.integer "amount_for_sale"
     t.integer "asking_price"
+    t.integer "cannabis_plant_id"
+    t.integer "harvest_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

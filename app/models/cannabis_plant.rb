@@ -8,6 +8,6 @@ class CannabisPlant < ApplicationRecord
     accepts_nested_attributes_for :grow_room
 
     def self.harvested_cannabis_plants
-        where(ready_to_harvest:true)
+        where(harvested:true)
     end
 end

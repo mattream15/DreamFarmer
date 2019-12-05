@@ -1,0 +1,36 @@
+<%= render partial: 'layouts/errors', locals:{object: @market}%>
+<% if @harvest %>
+    <h1> Add a market offer for <%= @harvest.cannabis_plant.cannabis_species %> - <%= @harvest.cannabis_plant.variety_name %>!</h1>
+<% else %>
+    <% render :cannabis_plant/:id %>
+<% end %>
+
+<%= form_for(@market) do |f| %>
+<% if params[:cannabis_plant_id, :harvest_id] %>
+    <%= f.hidden_field :cannabis_plant_id %>
+    <%= f.hidden_field :harvest_id %>
+
+<% else %>
+    <div>
+        <%= f.label :cannabis_plant_id, "Select a Cannabis Plant" %>
+        <%= f.collection_select :cannabis_plant_id, CannabisPlant.all, :id, :variety_name, include_blank: true %>
+    </div>
+    <% end %>
+<div>
+    <%= f.label :part_of_plant %>
+    <%= f.text_field :part_of_plant %>
+</div>
+
+<div>
+    <%= f.label :amount_for_sale %>
+    <%= f.text_field :amount_for_sale %>
+</div>
+
+<div>
+    <%= f.label :asking_price %>
+    <%= f.text_field :asking_price %>
+</div>
+
+<%= f.submit %>
+
+<% end %>

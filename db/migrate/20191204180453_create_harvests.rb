@@ -6,6 +6,9 @@ class CreateHarvests < ActiveRecord::Migration[6.0]
       t.integer :weight_of_roots
       t.integer :weight_of_seeds
       t.integer :weight_of_stalks
+      t.integer :user_id
+      t.integer :cannabis_plant_id
+      t.integer :grow_room_id
       t.timestamps
     end
   end

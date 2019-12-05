@@ -11,4 +11,13 @@ class GrowRoomsController < ApplicationController
     def create
     end
 
+    def edit
+    end
+
+    def show
+    end
+
+    private
+
+
 end
