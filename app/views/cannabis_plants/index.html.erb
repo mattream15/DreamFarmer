@@ -1,5 +1,11 @@
 <h1>Welcome to your Cannabis Plants Index!</h1>
 
+<% if current_user %>
+    <h1> View all the cannabis plants for  <%= current_user.username %>!</h1>
+<% else %>
+    <h1> View all the cannabis plants</h1>
+<% end %>
+
 <% @cannabis_plants.each do |c| %>
     <h2><%= c.cannabis_species %> - <%= c.variety_name %></h2>
     <h4><%= c.number_of_seeds %></h4>

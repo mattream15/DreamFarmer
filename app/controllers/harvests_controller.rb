@@ -9,4 +9,8 @@ class HarvestsController < ApplicationController
     def show
         @harvest = Harvest.find_by(params[:id])
     end
+
+    def market_offers
+        @harvest = Harvest.grouped_market_offers
+    end
 end

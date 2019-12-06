@@ -1,21 +1,26 @@
 class CannabisPlantsController < ApplicationController
 
     def index
-        @cannabis_plants = CannabisPlant.all
+        if current_user = User.find_by_id(params[:user_id])
+        @cannabis_plants = current_user.cannabis_plants.all
+        else
+            @cannabis_plants = Cannabis_Plant.all
+        end
     end
 
     def new
-        @cannabis_plant = CannabisPlant.new
-        @cannabis_plant.build_grow_room
+        if @user = User.find_by_id(params[:user_id])
+            @cannabis_plant = @user.cannabis_plants.build
+        else
+            @cannabis_plant = CannabisPlant.new
+        end
     end
 
     def create
-        @cannabis_plant = CannabisPlant.new(cannabis_plant_params)
-        @cannabis_plant.user = current_user
+        @cannabis_plant = current_user.cannabis_plants.build(cannabis_plant_params)
         if @cannabis_plant.save
-            redirect_to cannabis_plant_path
+            redirect_to cannabis_plant_path(@cannabis_plant)
         else
-            @cannabis_plant.build_grow_room
             render :new
         end
     end
@@ -31,6 +36,6 @@ class CannabisPlantsController < ApplicationController
     private
 
     def cannabis_plant_params
-        params.require(:cannabis_plant).permit(:cannabis_species, :variety_name, :number_of_seeds, :ready_to_harvest, :grow_room_id, grow_room_attributes: [:name, :growing_style, :nutrients, :ph])
+        params.require(:cannabis_plant).permit(:cannabis_species, :variety_name, :number_of_seeds, :ready_to_harvest,:grow_room_id, grow_room_attributes: [:name, :growing_style, :type_of_soil, :type_of_medium, :nutrients, :ph])
     end
 end
