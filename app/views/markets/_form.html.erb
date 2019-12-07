@@ -1,6 +1,6 @@
 <%= render partial: 'layouts/errors', locals:{object: @market}%>
 <% if @harvest %>
-    <h1> Add a market offer for <%= @harvest.cannabis_plant.cannabis_species %> - <%= @harvest.cannabis_plant.variety_name %>!</h1>
+    <h1> Add a market offer for <%= @harvest.cannabis_plant.strain %>!</h1>
 <% else %>
     <% render :cannabis_plant/:id %>
 <% end %>

@@ -7,6 +7,9 @@
 <% end %>
 
 <% @cannabis_plants.each do |c| %>
-    <h2><%= c.cannabis_species %> - <%= c.variety_name %></h2>
+    <h2><%= c.strain %>
     <h4><%= c.number_of_seeds %></h4>
+    <h4><%= c.growing_method %></h4>
+    <h4><%= c.nutrients %></h4>
+    <h4><%= c.ph %></h4>
 <% end %>

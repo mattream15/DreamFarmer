@@ -1,7 +1,8 @@
 <h1>This is your cannabis plant!</h1>
-<h4><%= @cannabis_plant.cannabis_species %></h4>
-<h4><%= @cannabis_plant.variety_name %></h4>
+<h4><%= @cannabis_plant.strain %></h4>
 <h4><%= @cannabis_plant.number_of_seeds %></h4>
-
-
-<li><%= link_to "Select your grow room or create a new one", new_grow_room_path %></li>
+<h4><%= @cannabis_plant.growing_method %></h4>
+<h4><%= @cannabis_plant.nutrients %></h4>
+<h4><%= @cannabis_plant.ph %></h4>
+<br>
+<li><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvests_path(@cannabis_plant, @harvest) %></li>

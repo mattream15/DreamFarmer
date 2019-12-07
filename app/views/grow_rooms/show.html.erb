@@ -1,1 +1,11 @@
 <h1>This is your grow room!</h1>
+<% @grow_room.cannabis_plants.each do |c| %>
+<h4><%= c.strain %></h4>
+<h4><%= c.number_of_seeds %></h4>
+<h4><%= c.growing_method %></h4>
+<h4><%= c.nutrients %></h4>
+<h4><%= c.ph %></h4>
+<% end %>
+
+
+

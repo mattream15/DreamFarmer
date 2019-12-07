@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 2019_12_04_180724) do
 
   create_table "cannabis_plants", force: :cascade do |t|
-    t.string "cannabis_species"
-    t.string "variety_name"
+    t.string "strain"
     t.integer "number_of_seeds"
-    t.boolean "ready_to_harvest", default: false
-    t.boolean "harvested", default: false
+    t.string "growing_method"
+    t.string "nutrients"
+    t.integer "ph"
     t.integer "user_id"
     t.integer "grow_room_id"
     t.datetime "created_at", precision: 6, null: false
@@ -25,15 +25,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_180724) do
   end
 
   create_table "grow_rooms", force: :cascade do |t|
-    t.string "name"
-    t.string "growing_style"
-    t.string "type_of_soil"
-    t.string "type_of_medium"
-    t.string "nutrients"
-    t.integer "ph"
-    t.string "type_of_light"
-    t.integer "room_temperature"
-    t.integer "relative_humidity"
+    t.string "light_source"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
