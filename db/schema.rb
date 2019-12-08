@@ -10,47 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_04_180724) do
+ActiveRecord::Schema.define(version: 2019_12_08_205953) do
 
   create_table "cannabis_plants", force: :cascade do |t|
-    t.string "strain"
     t.integer "number_of_seeds"
-    t.string "growing_method"
-    t.string "nutrients"
-    t.integer "ph"
     t.integer "user_id"
-    t.integer "grow_room_id"
+    t.integer "strain_id"
+    t.integer "growing_method_id"
+    t.integer "nutrient_id"
+    t.integer "ph_id"
+    t.integer "light_source_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "grow_rooms", force: :cascade do |t|
-    t.string "light_source"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "growing_methods", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "harvests", force: :cascade do |t|
     t.integer "weight_of_flowers"
-    t.integer "weight_of_leaves"
-    t.integer "weight_of_roots"
-    t.integer "weight_of_seeds"
-    t.integer "weight_of_stalks"
     t.integer "user_id"
     t.integer "cannabis_plant_id"
-    t.integer "grow_room_id"
+    t.integer "light_source_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "light_sources", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "markets", force: :cascade do |t|
-    t.string "part_of_plant"
     t.integer "amount_for_sale"
     t.integer "asking_price"
     t.integer "cannabis_plant_id"
     t.integer "harvest_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "nutrients", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "phs", force: :cascade do |t|
+    t.integer "measure"
+  end
+
+  create_table "strains", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|

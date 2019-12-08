@@ -32,6 +32,6 @@ class CannabisPlantsController < ApplicationController
     private
 
     def cannabis_plant_params
-        params.require(:cannabis_plant).permit(:strain, :number_of_seeds, :growing_method, :nutrients, :ph, :grow_room_id, grow_room_attributes: [:light_source])
+        params.require(:cannabis_plant).permit(:number_of_seeds, :strain_id, :growing_method_id, :nutrient_id, :ph_id, :light_source_id)
     end
 end

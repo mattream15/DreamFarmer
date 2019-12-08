@@ -36,6 +36,6 @@ class MarketsController < ApplicationController
     private
 
     def market_params
-        params.require(:market).permit(:part_of_pant, :amount_for_sale, :asking_price, :harvest_id)
+        params.require(:market).permit(:amount_for_sale, :asking_price, :harvest_id)
     end
 end

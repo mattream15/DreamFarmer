@@ -7,8 +7,7 @@
 
 <div>
 <%= f.label :strain %>
-<%= f.collection_select :cannabis_plant_id, CannabisPlant.all, :id, :strain, :include_blank: "Select a Strain" %>
-</div>
+<%= f.collection_select :strain_id, Strain.all, :id, :name, :prompt => "Select a Strain" %></div>
 
 <div>
     <%= f.label :number_of_seeds %>
@@ -17,22 +16,22 @@
 
 <div>
     <%= f.label :growing_method %>
-    <%= f.collection_select :cannabis_plant_id, CannabisPlant.all, :id, :growing_method, :include_blank: "Select a Growing Method" %>
+    <%= f.collection_select :growing_method_id, GrowingMethod.all, :id, :name, :prompt => "Select a Growing Method" %>
 </div>
 
 <div>
-    <%= f.label :nutrients %>
-    <%= f.collection_select :cannabis_plant_id, CannabisPlant.all, :id, :nutrtients, :include_blank: "Select Nutrients" %>
-</div>
+    <%= f.label :nutrient %>
+    <%= f.collection_select :nutrient_id, Nutrient.all, :id, :name, :prompt => "Select a Nutrient" %></div>
 
 <div>
     <%= f.label :ph %>
-    <%= f.collection_select :cannabis_plant_id, CannabisPlant.all, :id, :ph, :include_blank: "Select pH" %>
+    <%= f.collection_select :ph_id, Ph.all, :id, :measure, :prompt => "Select a pH" %>
 </div>
 
-<p>Please select a grow room:</p>
+<p>Please select a light source:</p>
 <div>
-    <%= f.collection_select :grow_room_id, GrowRoom.all, :id, :light_source, :prompt => "Select a Grow Room" %>
+    <%= f.label :light_source %>
+    <%= f.collection_select :light_source_id, LightSource.all, :id, :name, :prompt => "Select a Light Source" %>
 </div>
 
 
