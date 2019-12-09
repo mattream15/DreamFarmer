@@ -1,15 +1,18 @@
-<h1>Welcome to your Cannabis Plants Index!</h1>
-
+<h1>DreamFarmer</h1>
+<br>
 <% if current_user %>
-    <h1> View all the cannabis plants for  <%= current_user.username %>!</h1>
+    <h3> View all the cannabis plants for  <%= current_user.username %>:</h3>
 <% else %>
-    <h1> View all the cannabis plants</h1>
+    <h3> View all cannabis plants:</h3>
 <% end %>
-
+<br>
+<div>
 <% @cannabis_plants.each do |c| %>
-    <h2><%= c.strain %>
-    <h4><%= c.number_of_seeds %></h4>
-    <h4><%= c.growing_method %></h4>
-    <h4><%= c.nutrients %></h4>
-    <h4><%= c.ph %></h4>
+    <h4>Cannabis strain: <%= c.strain.name %></h4>
+    <h5>Number of seeds: <%= c.number_of_seeds %></h5>
+    <h5>Growing method: <%= c.growing_method.name %></h5>
+    <h5>Nutrient: <%= c.nutrient.name %></h5>
+    <h5>pH value: <%= c.ph.measure %></h5>
+    <br>
 <% end %>
+</div>

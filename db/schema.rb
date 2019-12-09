@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_205953) do
   end
 
   create_table "phs", force: :cascade do |t|
-    t.integer "measure"
+    t.float "measure"
   end
 
   create_table "strains", force: :cascade do |t|

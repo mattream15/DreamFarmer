@@ -2,7 +2,7 @@ class CannabisPlantsController < ApplicationController
 
     def index
         if current_user
-        @cannabis_plants = current_user.cannabis_plants.all
+            @cannabis_plants = current_user.cannabis_plants.all
         else
             @cannabis_plants = CannabisPlant.all
         end

@@ -8,8 +8,5 @@ class Harvest < ApplicationRecord
     validates :weight_of_flowers, presence: true
 
     scope :grouped_market_offers, -> {left_joins(:markets).group(:id).order('created_at: :desc')}
-
-    cannabis_plant_production = [
-        weight_of_flowers: []
-    ]
+    
 end

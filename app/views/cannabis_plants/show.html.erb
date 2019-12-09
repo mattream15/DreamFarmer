@@ -1,8 +1,8 @@
 <h1>This is your cannabis plant!</h1>
-<h4><%= @cannabis_plant.strain %></h4>
-<h4><%= @cannabis_plant.number_of_seeds %></h4>
-<h4><%= @cannabis_plant.growing_method %></h4>
-<h4><%= @cannabis_plant.nutrients %></h4>
-<h4><%= @cannabis_plant.ph %></h4>
+<h4>Cannabis strain: <%= @cannabis_plant.strain.name %></h4>
+<h4>Number of seeds: <%= @cannabis_plant.number_of_seeds %></h4>
+<h4>Growing method: <%= @cannabis_plant.growing_method.name %></h4>
+<h4>Nutrient: <%= @cannabis_plant.nutrient.name %></h4>
+<h4>pH value: <%= @cannabis_plant.ph.measure %></h4>
 <br>
-<li><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvests_path(@cannabis_plant, @harvest) %></li>
+<li><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvest_path(@cannabis_plant, @harvest, method: "create") %></li>

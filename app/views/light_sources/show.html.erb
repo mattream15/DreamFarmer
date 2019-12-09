@@ -1,0 +1,12 @@
+<h1>This is your grow room!</h1>
+<% @light_source.cannabis_plants.each do |l| %>
+        <h4>Cannabis strain: <%= l.strain.name %></h4>
+        <h5>Number of seeds: <%= l.number_of_seeds %></h5>
+        <h5>Growing method: <%= l.growing_method.name %></h5>
+        <h5>Nutrient: <%= l.nutrient.name %></h5>
+        <h5>pH value: <%= l.ph.measure %></h5>
+        <br>
+<% end %>
+
+
+
