@@ -5,4 +5,4 @@
 <h4>Nutrient: <%= @cannabis_plant.nutrient.name %></h4>
 <h4>pH value: <%= @cannabis_plant.ph.measure %></h4>
 <br>
-<li><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvest_path(@cannabis_plant, @harvest, method: "create") %></li>
+<li><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvest_path(@cannabis_plant, method: "post") %></li>
