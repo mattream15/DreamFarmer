@@ -23,4 +23,10 @@
   </div>
 <% end %>
 
+<% if current_user %>
+  <h4>Welcome <%= current_user.username %></h4>
+<% else %>
+  <%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>
+
 <%= render "devise/shared/links" %>

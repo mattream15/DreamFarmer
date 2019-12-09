@@ -14,4 +14,12 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :address, uniqueness: true
   validates :address, presence: true
+
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"]
+    end
+  end
 end
