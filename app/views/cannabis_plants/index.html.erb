@@ -1,18 +1,19 @@
-<h1>DreamFarmer</h1>
-<br>
 <% if current_user %>
     <h3> View all the cannabis plants for  <%= current_user.username %>:</h3>
 <% else %>
     <h3> View all cannabis plants:</h3>
 <% end %>
-<br>
 <div>
 <% @cannabis_plants.each do |c| %>
-    <h4>Cannabis strain: <%= c.strain.name %></h4>
-    <h5>Number of seeds: <%= c.number_of_seeds %></h5>
-    <h5>Growing method: <%= c.growing_method.name %></h5>
-    <h5>Nutrient: <%= c.nutrient.name %></h5>
-    <h5>pH value: <%= c.ph.measure %></h5>
+    <h3>Farmer: <%= c.user.username %></h3>
+    <ul>
+        <li><h4>Cannabis strain: <%= c.strain.name %></h4></li>
+        <li><h5>Number of seeds: <%= c.number_of_seeds %></h5></li>
+        <li><h5>Growing method: <%= c.growing_method.name %></h5></li>
+        <li><h5>Nutrient: <%= c.nutrient.name %></h5></li>
+        <li><h5>pH value: <%= c.ph.measure %></h5></li>
+        <li><h5>Grow Room: <%= link_to c.light_source.name, light_source_path(@light_source) %> Room</h5></li>
+    </ul>
     <br>
 <% end %>
 </div>

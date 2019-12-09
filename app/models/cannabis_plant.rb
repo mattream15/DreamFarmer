@@ -11,7 +11,7 @@ class CannabisPlant < ApplicationRecord
 
     accepts_nested_attributes_for :light_source
 
-    validates :number_of_seeds, presence: true
+    validates :number_of_seeds, numericality: { only_integer: true }
     
     def self.harvested_cannabis_plants
         where(harvested:true)
