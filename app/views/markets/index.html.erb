@@ -6,9 +6,10 @@
 <% end %>
 
 <% @markets.each do |m| %>
-    <h3><%= m.cannabis_plant.strain.name %></h3>
-    <h4><%= m.amount_for_sale %></h4>
-    <h4><%= m.asking_price %></h4>
+    <h3>Farmer: <%= m.cannabis_plant.user.username %></h3>
+    <h3>Cannabis Strain: <%= m.cannabis_plant.strain.name %></h3>
+    <h4>Amount for Sale: <%= m.amount_for_sale %> grams</h4>
+    <h4>Asking Price: $<%= m.asking_price %></h4>
     <% end %>
 
 

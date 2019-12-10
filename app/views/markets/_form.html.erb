@@ -1,8 +1,8 @@
 <%= render partial: 'layouts/errors', locals:{object: @market}%>
 <% if @harvest %>
-    <h1> Add a market offer for <%= @harvest.cannabis_plant.strain %>!</h1>
+    <h1> Add a market offer for <%= @harvest.cannabis_plant.strain.name %>!</h1>
 <% else %>
-    <% render :cannabis_plant/:id %>
+    <h3>Add a market offer </h3>
 <% end %>
 
 <%= form_for(@market) do |f| %>
@@ -16,10 +16,6 @@
         <%= f.collection_select :harvest_id, Harvest.all, :id, :weight_of_flowers, include_blank: true %>
     </div>
     <% end %>
-<div>
-    <%= f.label :part_of_plant %>
-    <%= f.text_field :part_of_plant %>
-</div>
 
 <div>
     <%= f.label :amount_for_sale %>

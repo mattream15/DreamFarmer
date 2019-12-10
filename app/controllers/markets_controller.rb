@@ -1,7 +1,7 @@
 class MarketsController < ApplicationController
     
     def index
-        if @harvest = Harvest.find_by_id(params[:harvest_id])
+        if @harvest = Harvest.find_by(id: params[:harvest_id])
             @markets = @harvest.markets.all
         else
             @market = Market.all
@@ -9,12 +9,11 @@ class MarketsController < ApplicationController
     end
 
     def new
-        if @harvest = Harvest.find_by_id
-            (params[:harvest_id])
+        if @harvest = Harvest.find_by(id: params[:harvest_id])
             @market = @harvest.markets.build
-
         else
         @market = Market.new
+        end
     end
 
     def create
@@ -23,6 +22,7 @@ class MarketsController < ApplicationController
             redirect_to market_path(@market)
         else
             render :new
+        end
     end
 
     def edit

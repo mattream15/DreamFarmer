@@ -26,7 +26,7 @@ class CannabisPlantsController < ApplicationController
     end
 
     def show
-        @cannabis_plant = CannabisPlant.find_by(params[:id])
+        @cannabis_plant = CannabisPlant.find_by(id: params[:id])
     end
 
     private

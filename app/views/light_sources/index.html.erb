@@ -1,7 +1,7 @@
 <center><h2>Cannabis Plants by Grow Room:</h2></center>
 <div>
 <% @light_sources.each do |l| %>
-    <h2><%= l.name %> Grow Room</h2>
+    <h2><%= link_to l.name, light_source_path(l) %> Grow Room</h2>
     </div>
     <br>
     <% l.cannabis_plants.each do |c| %>
