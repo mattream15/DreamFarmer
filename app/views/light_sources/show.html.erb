@@ -2,7 +2,7 @@
 <% @light_source.cannabis_plants.each do |l| %>
     <ul>
         <li><h3>Farmer: <%= l.user.username %></h3></li>
-        <li><h4>Cannabis strain: <%= l.strain.name %></h4></li>
+        <li><h4>Cannabis strain: <%= link_to l.strain.name, cannabis_plant_path(l)  %></h4></li>
         <li><h5>Number of seeds: <%= l.number_of_seeds %></h5></li>
         <li><h5>Growing method: <%= l.growing_method.name %></h5></li>
         <li><h5>Nutrient: <%= l.nutrient.name %></h5></li>

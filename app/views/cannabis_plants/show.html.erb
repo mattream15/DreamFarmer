@@ -6,7 +6,7 @@
 <li><h4>Growing method: <%= @cannabis_plant.growing_method.name %></h4></li>
 <li><h4>Nutrient: <%= @cannabis_plant.nutrient.name %></h4></li>
 <li><h4>pH value: <%= @cannabis_plant.ph.measure %></h4></li>
-<li><h4>Grow Room:<%= link_to @cannabis_plant.light_source.name, light_source_path(@cannabis_plant) %></h4></li>
+<li><h4>Grow Room: <%= link_to @cannabis_plant.light_source.name, light_source_path(@cannabis_plant) %> Room</h4></li>
 </ul>
 </body>
 <div>

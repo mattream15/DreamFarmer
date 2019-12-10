@@ -10,7 +10,7 @@ class MarketsController < ApplicationController
 
     def new
         if @harvest = Harvest.find_by(id: params[:harvest_id])
-            @market = @harvest.markets.build
+            @market = @harvest.markets.build(market_params)
         else
         @market = Market.new
         end

@@ -1,4 +1,4 @@
-<h3>Harvest for <%= @harvest.cannabis_plant.user.username %>'s <%= @harvest.cannabis_plant.strain.name %></h3>
+<h3>Harvest for <%= @harvest.cannabis_plant.user.username %>'s <%= link_to @harvest.cannabis_plant.strain.name, cannabis_plant_path(@cannabis_plant) %></h3>
 <h4>Weight of flowers: <%= @harvest.weight_of_flowers %> grams from <%= @harvest.cannabis_plant.number_of_seeds %> seeds</h4>
 <br>
 <h3><%= link_to "Create Market Offer for Cannabis Plant Harvest", new_cannabis_plant_market_path %></h3>
