@@ -5,4 +5,8 @@ class Harvest < ApplicationRecord
 
     validates :weight_of_flowers, presence: true
     
+
+    def self.harvested_cannabis_plants
+        order(:weight_of_flowers)
+    end
 end

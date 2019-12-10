@@ -11,7 +11,8 @@ class HarvestsController < ApplicationController
     end
 
     def show
-        @cannabis_plant = CannabisPlant.find_by(id: params[:cannabis_plant_id])
         @harvest = Harvest.find_by(id: params[:id])
+        @cannabis_plant = CannabisPlant.find_by(id: params[:cannabis_plant_id])
+
     end
 end

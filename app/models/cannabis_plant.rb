@@ -14,6 +14,6 @@ class CannabisPlant < ApplicationRecord
     validates :number_of_seeds, numericality: { only_integer: true }
     
     def self.harvested_cannabis_plants
-        where(harvested:true)
+        where(weight_of_flowers: !nil)
     end
 end

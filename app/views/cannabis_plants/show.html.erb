@@ -1,15 +1,21 @@
 <body>
-<h1>Cannabis Plant Information for <%= current_user.username %></h1>
+<h1>Cannabis Plant Information for <%= @cannabis_plant.user.username %></h1>
 <ul>
 <li><h4>Cannabis strain: <%= @cannabis_plant.strain.name %></h4></li>
 <li><h4>Number of seeds: <%= @cannabis_plant.number_of_seeds %></h4></li>
 <li><h4>Growing method: <%= @cannabis_plant.growing_method.name %></h4></li>
 <li><h4>Nutrient: <%= @cannabis_plant.nutrient.name %></h4></li>
 <li><h4>pH value: <%= @cannabis_plant.ph.measure %></h4></li>
-<li><h4>Grow Room: <%= link_to @cannabis_plant.light_source.name, light_source_path(@cannabis_plant) %> Room</h4></li>
+<li><h4>Grow Room: <%= link_to @cannabis_plant.light_source.name, light_source_path(@cannabis_plant.light_source) %> Room</h4></li>
 </ul>
 </body>
 <div>
 <br>
-<h4><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvests_path(@cannabis_plant), method: :create %></h4>
+
+<% if @cannabis_plant.harvest %>
+    <h4><%= link_to "View Your Harvested Cannabis Plant(s)!", cannabis_plant_harvest_path(@cannabis_plant, @harvest) %></h4>
+<% else %>
+    <h4><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvests_path(@cannabis_plant), method: :create %></h4>
+<% end %>
+<h4><%= link_to "View your cannabis plants", cannabis_plants_path %></h4>
 </div>
