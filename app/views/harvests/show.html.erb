@@ -2,3 +2,6 @@
 <h4>Weight of flowers: <%= @harvest.weight_of_flowers %> grams from <%= @harvest.cannabis_plant.number_of_seeds %> seeds</h4>
 <br>
 <h3><%= link_to "Create Market Offer for Cannabis Plant Harvest", new_harvest_market_path(@harvest) %></h3>
+
+<h3>View <%= link_to "all harvested cannabis plants", harvests_path %></h3>
+

@@ -1,0 +1,10 @@
+<% @harvests.each do |h| %>
+<ul>
+<li><h3>Farmer: <%= h.cannabis_plant.user.username %></h3></li>
+<li><h4>Cannabis strain: <%= link_to h.cannabis_plant.strain.name, cannabis_plant_path(h) %></h4></li>
+<li><h4>Weight of flowers: <%= h.weight_of_flowers %> grams from <%= h.cannabis_plant.number_of_seeds %> seeds</h4></li>
+<li><h4>Grow Room: <%= link_to h.cannabis_plant.light_source.name, light_source_path(h.cannabis_plant.light_source) %> Room</h4></li>
+<br>
+</ul>
+<% end %>
+

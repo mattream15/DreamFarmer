@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  devise :omniauthable, omniauth_providers: %i[github]
+  devise :omniauthable, omniauth_providers: %i[facebook]
 
   has_many :cannabis_plants
   has_many :grow_rooms, through: :cannabis_plants
@@ -38,7 +38,7 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.github_data"] && session["devise.github_data"]["extra"]["raw_info"]
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
     end
