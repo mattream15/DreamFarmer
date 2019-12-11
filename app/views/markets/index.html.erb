@@ -1,15 +1,11 @@
-<h1>DreamFarmer</h1>
-<% if @harvest %>
-<h1>View the market offers for <%= @harvest.cannabis_plant.strain.name %>!</h1>
-<% else %>
-    <h1> View all of the market offers! </h1>
-<% end %>
-
+<h2> View all of the market offers! </h2>
+<br>
 <% @markets.each do |m| %>
-    <h3>Farmer: <%= m.cannabis_plant.user.username %></h3>
-    <h3>Cannabis Strain: <%= m.cannabis_plant.strain.name %></h3>
+    <h3>Farmer: <%= m.harvest.cannabis_plant.user.username %></h3>
+    <h4>Cannabis Strain: <%= link_to m.harvest.cannabis_plant.strain.name, cannabis_plant_path(m.harvest.cannabis_plant) %></h4>
     <h4>Amount for Sale: <%= m.amount_for_sale %> grams</h4>
     <h4>Asking Price: $<%= m.asking_price %></h4>
+    <br>
     <% end %>
 
 

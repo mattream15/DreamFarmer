@@ -1,23 +1,20 @@
 class MarketsController < ApplicationController
     
     def index
-        if @harvest = Harvest.find_by(id: params[:harvest_id])
-            @markets = @harvest.markets.all
-        else
-            @market = Market.all
-        end
+        @markets = Market.all
     end
 
     def new
         if @harvest = Harvest.find_by(id: params[:harvest_id])
-            @market = @harvest.markets.build(market_params)
+            @market = @harvest.build_market
         else
         @market = Market.new
         end
     end
 
     def create
-        current_user.markets.build(market_params)
+        @harvest = Harvest.find_by(id: params[:market][:harvest_id])
+        @market = @harvest.build_market(market_params)
         if @market.save
             redirect_to market_path(@market)
         else

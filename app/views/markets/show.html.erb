@@ -1,5 +1,7 @@
-<h1>This is your market offer for <%= @harvest.cannabis_plant.strain.name %></h1>
+<h1>This is your market offer for <%= @market.harvest.cannabis_plant.strain.name %></h1>
 
     <h2><%= @market.amount_for_sale %> grams</h2>
     
     <h2>$<%= @market.asking_price %></h2>
+
+    <h3><%= link_to "View all Cannabis Plant Harvests on Market", markets_path %></h3>

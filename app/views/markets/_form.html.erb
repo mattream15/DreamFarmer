@@ -6,16 +6,14 @@
 <% end %>
 
 <%= form_for(@market) do |f| %>
-<% if params[:cannabis_plant_id, :harvest_id] %>
-    <%= f.hidden_field :cannabis_plant_id %>
+<% if params[:harvest_id] %>
     <%= f.hidden_field :harvest_id %>
-
 <% else %>
     <div>
         <%= f.label :harvest_id, "Select a Harvest" %>
         <%= f.collection_select :harvest_id, Harvest.all, :id, :weight_of_flowers, include_blank: true %>
     </div>
-    <% end %>
+<% end %>
 
 <div>
     <%= f.label :amount_for_sale %>
