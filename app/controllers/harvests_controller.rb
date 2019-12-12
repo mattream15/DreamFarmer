@@ -17,5 +17,6 @@ class HarvestsController < ApplicationController
     def show
         @harvest = Harvest.find_by(id: params[:id])
         @cannabis_plant = CannabisPlant.find_by(id: params[:cannabis_plant_id])
+        @market = @harvest.market
     end
 end

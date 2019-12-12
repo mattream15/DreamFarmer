@@ -28,6 +28,7 @@ class MarketsController < ApplicationController
 
     def show
         @market = Market.find_by_id(params[:id])
+        @harvest = @market.harvest
     end
 
     private

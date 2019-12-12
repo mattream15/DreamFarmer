@@ -1,10 +1,13 @@
-<h2> View all of the market offers! </h2>
+<h2>Market Offers at DreamFarmer: </h2>
 <br>
 <% @markets.each do |m| %>
+
     <h3>Farmer: <%= m.harvest.cannabis_plant.user.username %></h3>
-    <h4>Cannabis Strain: <%= link_to m.harvest.cannabis_plant.strain.name, cannabis_plant_path(m.harvest.cannabis_plant) %></h4>
-    <h4>Amount for Sale: <%= m.amount_for_sale %> grams</h4>
-    <h4>Asking Price: $<%= m.asking_price %></h4>
+    <ul>
+    <li><h4>Cannabis Strain: <%= link_to m.harvest.cannabis_plant.strain.name, cannabis_plant_path(m.harvest.cannabis_plant) %></h4></li>
+    <li><h4>Amount for Sale: <%= m.amount_for_sale %> grams</h4></li>
+    <li><h4>Asking Price: $<%= m.asking_price %></h4></li>
+    </ul>
     <br>
     <% end %>
 

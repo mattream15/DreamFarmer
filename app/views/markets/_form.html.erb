@@ -1,8 +1,8 @@
 <%= render partial: 'layouts/errors', locals:{object: @market}%>
 <% if @harvest %>
-    <h1> Add a market offer for <%= @harvest.cannabis_plant.strain.name %>!</h1>
+    <h2> Add a Market Offer for <%= @harvest.cannabis_plant.strain.name %>:</h2>
 <% else %>
-    <h3>Add a market offer </h3>
+    <h2>Add a Market Offer </h2>
 <% end %>
 
 <%= form_for(@market) do |f| %>

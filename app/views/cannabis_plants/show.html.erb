@@ -1,5 +1,5 @@
 <body>
-<h1>Cannabis Plant Information for <%= @cannabis_plant.user.username %></h1>
+<h2>Cannabis Plant Information for <%= @cannabis_plant.user.username %></h2>
 <ul>
 <li><h4>Cannabis strain: <%= @cannabis_plant.strain.name %></h4></li>
 <li><h4>Number of seeds: <%= @cannabis_plant.number_of_seeds %></h4></li>
@@ -11,11 +11,12 @@
 </body>
 <div>
 <br>
-
+<ul>
 <% if @cannabis_plant.harvest %>
-    <h4><%= link_to "View Your Harvested Cannabis Plant(s)!", cannabis_plant_harvest_path(@cannabis_plant, @harvest) %></h4>
+    <li><h4>View <%= link_to "Your Harvested Cannabis Plant(s)", cannabis_plant_harvest_path(@cannabis_plant, @harvest) %></h4></li>
 <% else %>
-    <h4><%= link_to "Harvest Your Cannabis Plant(s)!", cannabis_plant_harvests_path(@cannabis_plant), method: :create %></h4>
+    <li><h4><%= link_to "Harvest Your Cannabis Plant(s)", cannabis_plant_harvests_path(@cannabis_plant), method: :create %></h4></li>
 <% end %>
-<h4><%= link_to "View your cannabis plants", cannabis_plants_path %></h4>
+    <li><h4>View <%= link_to "Your Cannabis Plants", cannabis_plants_path %></h4></li>
+</ul>
 </div>

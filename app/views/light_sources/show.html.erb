@@ -1,12 +1,13 @@
-<center><h2><%= @light_source.name %> Grow Room Contents:</h2></center>
+<h2><%= @light_source.name %> Grow Room Contents:</h2>
+<br>
 <% @light_source.cannabis_plants.each do |l| %>
     <ul>
-        <li><h3>Farmer: <%= l.user.username %></h3></li>
+        <h3>Farmer: <%= l.user.username %></h3>
         <li><h4>Cannabis strain: <%= link_to l.strain.name, cannabis_plant_path(l)  %></h4></li>
-        <li><h5>Number of seeds: <%= l.number_of_seeds %></h5></li>
-        <li><h5>Growing method: <%= l.growing_method.name %></h5></li>
-        <li><h5>Nutrient: <%= l.nutrient.name %></h5></li>
-        <li><h5>pH value: <%= l.ph.measure %></h5></li>
+        <li><h4>Number of seeds: <%= l.number_of_seeds %></h4></li>
+        <li><h4>Growing method: <%= l.growing_method.name %></h4></li>
+        <li><h4>Nutrient: <%= l.nutrient.name %></h4></li>
+        <li><h4>pH value: <%= l.ph.measure %></h4></li>
         </ul>
         <br>
 <% end %>
