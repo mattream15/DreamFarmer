@@ -1,3 +1,9 @@
+<% if flash[:error] %>
+    <p>
+    <%= flash[:error] %>
+    </p>
+<% end %>
+
 <% if current_user %>
     <h2> View all the cannabis plants for  <%= current_user.username %>:</h2>
 <% else %>

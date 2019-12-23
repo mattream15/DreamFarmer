@@ -22,12 +22,17 @@ class CannabisPlantsController < ApplicationController
     end
 
     def edit
+        @cannabis_plant = CannabisPlant.find_by(id: params[:id])
         render :edit
     end
 
     def show
-        @cannabis_plant = CannabisPlant.find_by(id: params[:id])
-        @harvest = @cannabis_plant.harvest
+        if @cannabis_plant = CannabisPlant.find_by(id: params[:id])
+            @harvest = @cannabis_plant.harvest
+        else 
+            flash[:error] = "Record not found"
+            redirect_to cannabis_plants_path
+        end
     end
 
     private
